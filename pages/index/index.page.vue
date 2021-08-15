@@ -15,7 +15,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useInfiniteQuery } from 'vue-query'
-import { Response, initialPage, getCharacters } from './index.page.server'
+import { Response, initialPage, getCharacters, Character } from './index.page.server'
 
 // initialData prop comes from pageProps in index.page.server.ts
 const props = defineProps<{
@@ -46,7 +46,7 @@ const {
   }
 })
 
-const characters = computed(() => {
+const characters = computed<Character[]>(() => {
   return data.value!.pages.flat().map((char) => {
     return char.results
   }).flat()
