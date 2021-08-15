@@ -15,15 +15,13 @@ async function addPageContext(_pageContext: PageContext) {
 }
 
 export interface Response {
-    info: Info
+    info: {
+        count: number
+        pages: number
+        next: string
+        prev: any
+    }
     results: Character[]
-}
-
-export interface Info {
-    count: number
-    pages: number
-    next: string
-    prev: any
 }
 
 export interface Character {
@@ -33,22 +31,18 @@ export interface Character {
     species: string
     type: string
     gender: string
-    origin: Origin
-    location: Location
+    origin: {
+        name: string
+        url: string
+    }
+    location: {
+        name: string
+        url: string
+    }
     image: string
     episode: string[]
     url: string
     created: string
-}
-
-export interface Origin {
-    name: string
-    url: string
-}
-
-export interface Location {
-    name: string
-    url: string
 }
   
 export async function getCharacters(page: number): Promise<Response> {
