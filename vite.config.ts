@@ -3,7 +3,13 @@ import ssr from 'vite-plugin-ssr/plugin'
 import { UserConfig } from 'vite'
 
 const config: UserConfig = {
-  plugins: [vue(), ssr()]
+  plugins: [
+    vue(),
+    ssr()
+  ],
+  optimizeDeps: {
+    exclude: ['@nuxtjs/composition-api']
+  },
 }
 
 export default config

@@ -1,30 +1,51 @@
-import { createSSRApp, defineComponent, h } from 'vue'
+import { App, createSSRApp, defineComponent, h, markRaw, reactive, InjectionKey } from 'vue'
 import PageLayout from './PageLayout.vue'
-import { PageContext } from './types'
+import { Component, PageContext } from './types'
 
 export { createApp }
 
+export const PageContextkey: InjectionKey<PageContext> = Symbol('PageContext');
+
 function createApp(pageContext: PageContext) {
-  const { Page, pageProps } = pageContext
+  const { Page } = pageContext
+
+  let rootComponent: Component
   const PageWithLayout = defineComponent({
+    data: () => ({
+      Page: markRaw(Page),
+      pageProps: markRaw(pageContext.pageProps || {})
+    }),
+    created() {
+      rootComponent = this
+    },
     render() {
       return h(
         PageLayout,
         {},
         {
-          default() {
-            return h(Page, pageProps || {})
+          default: () => {
+            return h(this.Page, this.pageProps)
           }
         }
       )
     }
   })
 
-  const app = createSSRApp(PageWithLayout)
+  // We use `reactive` because we use Client-side Routing.
+  // When using Server-side Routing, we don't need `reactive`.
+  // const pageContextReactive = reactive(pageContext)
+  const pageContextReactive = pageContext
+  const changePage = (pageContext: PageContext) => {
+    Object.assign(pageContextReactive, pageContext)
+    rootComponent.Page = markRaw(pageContext.Page)
+    rootComponent.pageProps = markRaw(pageContext.pageProps || {})
+  }
 
-  // We make `pageContext.routeParams` available in all components as `$routeParams`
-  // (e.g. `$routeParams.movieId` for a Route String `/movie/:movieId`).
-  app.config.globalProperties.$routeParams = pageContext.routeParams
+  const app: App<Element> & { changePage: typeof changePage } = Object.assign(createSSRApp(PageWithLayout), {
+    changePage
+  })
+  app.config.globalProperties.$pageContext = pageContextReactive
+  app.provide(PageContextkey, pageContext)
 
   return app
 }

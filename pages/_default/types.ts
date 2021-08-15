@@ -1,5 +1,6 @@
 import type { PageContextBuiltIn } from 'vite-plugin-ssr/types'
 export type PageProps = {}
+export type Component = any
 export type PageContext = PageContextBuiltIn & {
   Page: any
   pageProps?: PageProps
@@ -7,4 +8,5 @@ export type PageContext = PageContextBuiltIn & {
     title?: string
     description?: string
   }
+  req: Express.Request
 }

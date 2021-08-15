@@ -1,6 +1,8 @@
 <template>
-  <h1>About</h1>
-  <p>A colored page.</p>
+  <div>
+    <h1>About</h1>
+    <p>This is an example of vite-plugin-ssr and vue-query integration.</p>
+  </div>
 </template>
 
 <style>

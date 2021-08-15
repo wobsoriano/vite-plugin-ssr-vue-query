@@ -1,11 +1,31 @@
-import { getPage } from 'vite-plugin-ssr/client'
 import { createApp } from './app'
+import { useClientRouter } from 'vite-plugin-ssr/client/router'
 import { PageContext } from './types'
 
-hydrate()
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
-async function hydrate() {
-  const pageContext = (await getPage()) as PageContext
-  const app = createApp(pageContext)
-  app.mount('#app')
+let app: ReturnType<typeof createApp>
+const { hydrationPromise } = useClientRouter({
+  render(pageContext: PageContext) {
+    if (!app) {
+      app = createApp(pageContext)
+      app.mount('#app')
+    } else {
+      app.changePage(pageContext)
+    }
+  },
+  onTransitionStart,
+  onTransitionEnd
+})
+
+hydrationPromise.then(() => {
+  console.log('Hydration finished; page is now interactive.')
+})
+
+function onTransitionStart() {
+  NProgress.start()
+}
+function onTransitionEnd() {
+  NProgress.done()
 }

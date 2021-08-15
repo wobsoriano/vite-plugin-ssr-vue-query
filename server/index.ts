@@ -1,5 +1,9 @@
 import express from 'express'
 import { createPageRender } from 'vite-plugin-ssr'
+import fetch from 'node-fetch'
+
+// @ts-ignore
+global.fetch = fetch
 
 const isProduction = process.env.NODE_ENV === 'production'
 const root = `${__dirname}/..`
@@ -25,7 +29,8 @@ async function startServer() {
   app.get('*', async (req, res, next) => {
     const url = req.originalUrl
     const pageContext = {
-      url
+      url,
+      // req
     }
     const result = await renderPage(pageContext)
     if (result.nothingRendered) return next()
