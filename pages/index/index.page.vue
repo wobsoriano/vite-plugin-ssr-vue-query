@@ -15,7 +15,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useInfiniteQuery } from 'vue-query'
-import { Response, getCharacters } from './index.page.server'
+import { Response, initialPage, getCharacters } from './index.page.server'
 
 const props = defineProps<{
   initialData: Response
@@ -32,7 +32,7 @@ const {
 } = useInfiniteQuery('characters', ({ pageParam }) => getCharacters(pageParam), {
   initialData: {
     pages: [props.initialData],
-    pageParams: [1]
+    pageParams: [initialPage]
   },
   getNextPageParam: (lastPage) => {
     const nextUrl = lastPage.info.next

@@ -2,8 +2,9 @@ import { PageContext } from "../_default/types"
 
 export { addPageContext }
 
+export const initialPage = 1
+
 async function addPageContext(_pageContext: PageContext) {
-    const initialPage = 1
     const initialData = await getCharacters(initialPage)
 
     return {
