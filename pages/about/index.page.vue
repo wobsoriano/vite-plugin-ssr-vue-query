@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>About</h1>
-    <p>This is an example of vite-plugin-ssr and vue-query integration.</p>
+    <p>This is an example of <a href="https://vite-plugin-ssr.com/">vite-plugin-ssr</a> and <a href="https://vue-query.vercel.app/">vue-query</a> integration.</p>
   </div>
 </template>
 
