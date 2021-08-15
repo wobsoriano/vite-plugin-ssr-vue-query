@@ -8,5 +8,4 @@ export type PageContext = PageContextBuiltIn & {
     title?: string
     description?: string
   }
-  req: Express.Request
 }
