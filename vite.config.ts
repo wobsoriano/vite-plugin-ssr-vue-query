@@ -6,10 +6,7 @@ const config: UserConfig = {
   plugins: [
     vue(),
     ssr()
-  ],
-  optimizeDeps: {
-    exclude: ['@nuxtjs/composition-api']
-  },
+  ]
 }
 
 export default config
