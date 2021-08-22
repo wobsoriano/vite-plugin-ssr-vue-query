@@ -1,10 +1,11 @@
 import { App, createSSRApp, defineComponent, h, markRaw, reactive, InjectionKey } from 'vue'
+import { QueryClient } from 'vue-query';
 import PageLayout from './PageLayout.vue'
 import { Component, PageContext } from './types'
 
 export { createApp }
 
-export const PageContextkey: InjectionKey<PageContext> = Symbol('PageContext');
+export const VUE_QUERY_STATE: InjectionKey<QueryClient | undefined> = Symbol('VUE_QUERY_STATE');
 
 function createApp(pageContext: PageContext) {
   const { Page } = pageContext
@@ -44,7 +45,6 @@ function createApp(pageContext: PageContext) {
     changePage
   })
   app.config.globalProperties.$pageContext = pageContextReactive
-  app.provide(PageContextkey, pageContext)
 
   return app
 }

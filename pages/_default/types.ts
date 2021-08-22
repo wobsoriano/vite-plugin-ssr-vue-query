@@ -1,5 +1,8 @@
 import type { PageContextBuiltIn } from 'vite-plugin-ssr/types'
-export type PageProps = {}
+import { QueryClient } from 'vue-query'
+export type PageProps = {
+  vueQueryState: QueryClient | undefined
+}
 export type Component = any
 export type PageContext = PageContextBuiltIn & {
   Page: any

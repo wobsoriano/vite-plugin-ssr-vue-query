@@ -1,0 +1,15 @@
+<template>
+    <slot />
+</template>
+
+<script setup lang="ts">
+import { inject } from 'vue'
+import { hydrate, useQueryClient } from 'vue-query'
+import { VUE_QUERY_STATE } from '../characters/character.page.server'
+
+const vueQueryState = inject(VUE_QUERY_STATE)
+if (vueQueryState) {
+    const queryClient = useQueryClient()
+    hydrate(queryClient, vueQueryState)
+}
+</script>

@@ -5,14 +5,19 @@
         <img src="./logo.svg" height="64" width="64" alt="logo" />
       </a>
       <a class="navitem" href="/">Home</a>
-      <a class="navitem" href="/about">About</a>
+      <a class="navitem" href="/characters">Characters</a>
     </div>
-    <div class="content"><slot /></div>
+    <div class="content">
+      <Hydrate>
+        <slot />
+      </Hydrate>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useQueryProvider } from 'vue-query'
+import Hydrate from '../_components/Hydrate.vue'
 
 useQueryProvider()
 </script>
