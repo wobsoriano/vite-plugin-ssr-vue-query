@@ -55,10 +55,3 @@ const characters = computed<Character[]>(() => {
   }).flat()
 })
 </script>
-
-<style>
-h1,
-p {
-  color: green;
-}
-</style>
