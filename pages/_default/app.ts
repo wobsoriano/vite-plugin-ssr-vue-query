@@ -1,11 +1,9 @@
-import { App, createSSRApp, defineComponent, h, markRaw, reactive, InjectionKey } from 'vue'
+import { App, createSSRApp, defineComponent, h, markRaw, reactive } from 'vue'
 import { QueryClient } from 'vue-query';
 import PageLayout from './PageLayout.vue'
 import { Component, PageContext } from './types'
 
 export { createApp }
-
-export const VUE_QUERY_STATE: InjectionKey<QueryClient | undefined> = Symbol('VUE_QUERY_STATE');
 
 function createApp(pageContext: PageContext) {
   const { Page } = pageContext
