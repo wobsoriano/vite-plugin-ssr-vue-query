@@ -914,6 +914,13 @@ once@^1.3.0:
   dependencies:
     wrappy "1"
 
+p-limit@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-3.1.0.tgz#e1daccbe78d0d1388ca18c64fea38e3e57e3706b"
+  integrity sha512-TYOanM3wGwNGsZN2cVTYPArw454xnXj5qmWF1bEoAc4+cU/ol7GVh7odevjp1FNHduHc3KZMcFduxU5Xc6uJRQ==
+  dependencies:
+    yocto-queue "^0.1.0"
+
 parseurl@~1.3.3:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.3.tgz#9da19e7bee8d12dff0513ed5b76957793bc2e8d4"
@@ -1260,15 +1267,15 @@ vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
-vite-plugin-import-build@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/vite-plugin-import-build/-/vite-plugin-import-build-0.1.1.tgz#c829b3506b9563538c5fd92043cc95830815f444"
-  integrity sha512-u+3axsyogeuYafyJxZCDUgGG7Z3qNxpObfnDUvcit3L3Qt/n9GNvUvP6L7Vr7V9a6GSUKbZxjY9ClfYIS7Rpog==
+vite-plugin-import-build@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/vite-plugin-import-build/-/vite-plugin-import-build-0.1.2.tgz#86a7be480cd84360d92f6bfa94a237646e9aa7fd"
+  integrity sha512-Jh4wanyvJ5QLDrVtw6VsTqT+1yISp1Fa+5v7VSwf5xyRiYZ0VeffMrSQFrQlt50D7g3CpO/aX9/X/SVWCVCa0w==
 
-vite-plugin-ssr@^0.2.9:
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/vite-plugin-ssr/-/vite-plugin-ssr-0.2.9.tgz#25f208bbc154d6e46031616cad7371391217c5c7"
-  integrity sha512-ayAvtGJM6GWfyvNots4HVmqhYKJs9FwZJajXtN9d5QhBfEFu/XUrAD+2V1Dii7FIEj0okNT4qXQOK3y2b4ZDdA==
+vite-plugin-ssr@^0.2.11:
+  version "0.2.11"
+  resolved "https://registry.yarnpkg.com/vite-plugin-ssr/-/vite-plugin-ssr-0.2.11.tgz#bd3b30862bd0c1d4e2d9574836929addd7ad10c3"
+  integrity sha512-tyjLDMwWh67UV3HXM60eXB8/jm+wZETiFzU4P0Pue5Ty/3CG6SsCVraKeXbOanYAcwqtJYViSFypUHrexJdOpg==
   dependencies:
     "@brillout/json-s" "^0.2.0"
     "@brillout/libassert" "^0.4.2"
@@ -1277,7 +1284,8 @@ vite-plugin-ssr@^0.2.9:
     devalue "^2.0.1"
     fast-glob "^3.2.5"
     kolorist "^1.4.1"
-    vite-plugin-import-build "^0.1.1"
+    p-limit "^3.1.0"
+    vite-plugin-import-build "^0.1.2"
 
 vite@^2.3.6:
   version "2.4.4"
@@ -1335,3 +1343,8 @@ yn@3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/yn/-/yn-3.1.1.tgz#1e87401a09d767c1d5eab26a6e4c185182d2eb50"
   integrity sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
+
+yocto-queue@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
+  integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==

@@ -1,4 +1,4 @@
-import { PageContext } from "../_default/types"
+import { PageContext } from "../../renderer/types"
 import { Response } from "./types"
 
 export { addPageContext }

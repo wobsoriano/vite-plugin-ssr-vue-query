@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import { useQueryProvider } from 'vue-query'
-import Hydrate from '../_components/Hydrate.vue'
+import Hydrate from './Hydrate.vue'
 
 useQueryProvider()
 </script>

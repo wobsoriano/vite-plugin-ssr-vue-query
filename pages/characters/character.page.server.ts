@@ -1,6 +1,6 @@
-import { InjectionKey } from "vue";
+import type { InjectionKey } from "vue";
 import { dehydrate, QueryClient } from "vue-query"
-import { PageContext } from "../_default/types"
+import { PageContext } from "../../renderer/types"
 import { Character } from "./types"
 
 export { addPageContext }

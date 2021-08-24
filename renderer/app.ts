@@ -1,5 +1,4 @@
 import { App, createSSRApp, defineComponent, h, markRaw, reactive } from 'vue'
-import { QueryClient } from 'vue-query';
 import PageLayout from './PageLayout.vue'
 import { Component, PageContext } from './types'
 

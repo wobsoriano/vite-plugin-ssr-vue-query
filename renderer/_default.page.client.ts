@@ -4,7 +4,7 @@ import { PageContext } from './types'
 
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
-import { VUE_QUERY_STATE } from '../characters/character.page.server'
+import { VUE_QUERY_STATE } from '../pages/characters/character.page.server'
 
 let app: ReturnType<typeof createApp>
 const { hydrationPromise } = useClientRouter({
