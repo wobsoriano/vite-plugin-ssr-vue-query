@@ -1,9 +1,5 @@
 import express from 'express'
 import { createPageRenderer } from 'vite-plugin-ssr'
-import fetch from 'node-fetch'
-
-// @ts-ignore
-global.fetch = fetch
 
 const isProduction = process.env.NODE_ENV === 'production'
 const root = `${__dirname}/..`
