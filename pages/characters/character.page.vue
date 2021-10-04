@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import { useQuery } from 'vue-query'
-import { getCharacter } from './character.page.server'
+import { getCharacter } from './characterData'
 
 const props = defineProps(['characterId'])
 

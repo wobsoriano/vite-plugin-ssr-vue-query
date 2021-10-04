@@ -1,4 +1,4 @@
-export interface Response {
+export interface APIResponse {
     info: {
         count: number
         pages: number

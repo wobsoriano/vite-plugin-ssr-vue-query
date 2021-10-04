@@ -1,6 +1,6 @@
 import { renderToString } from '@vue/server-renderer'
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
-import { VUE_QUERY_STATE } from '../pages/characters/character.page.server'
+import { VUE_QUERY_STATE } from '../pages/characters/characterData'
 import { createApp } from './app'
 import { PageContext } from './types'
 

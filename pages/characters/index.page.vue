@@ -17,12 +17,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useInfiniteQuery } from 'vue-query'
-import { initialPage, getCharacters } from './index.page.server'
-import { Response, Character } from './types'
+import { getCharacters, initialPage } from './characterData'
+import { APIResponse, Character } from './types'
 
 // initialData prop comes from pageProps in index.page.server.ts
 const props = defineProps<{
-  initialData: Response
+  initialData: APIResponse
 }>()
 
 const {
