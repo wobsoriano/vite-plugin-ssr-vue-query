@@ -1,16 +1,18 @@
 import { PageContext } from "../../renderer/types"
 import { Response } from "./types"
 
-export { addPageContext }
+export { onBeforeRender }
 
 export const initialPage = 1
 
-async function addPageContext(_pageContext: PageContext) {
+async function onBeforeRender(_pageContext: PageContext) {
     const initialData = await getCharacters(initialPage)
 
     return {
-        pageProps: {
-            initialData
+        pageContext: {
+            pageProps: {
+                initialData
+            }
         }
     }
 }
