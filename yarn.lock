@@ -525,7 +525,7 @@ express@^4.17.1:
     utils-merge "1.0.1"
     vary "~1.1.2"
 
-fast-glob@^3.2.5:
+fast-glob@^3.2.7:
   version "3.2.7"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.7.tgz#fd6cb7a2d7e9aa7a7846111e85a196d6b2f766a1"
   integrity sha512-rYGMRwip6lUMvYD3BTScMwT1HtAs2d71SMv66Vrxs0IekGZEjhM0pcMfjQPnknBt2zeCwQMEupiN02ZP4DiT1Q==
@@ -743,7 +743,7 @@ json5@^1.0.1:
   dependencies:
     minimist "^1.2.0"
 
-kolorist@^1.4.1:
+kolorist@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/kolorist/-/kolorist-1.5.0.tgz#a06f7dd11d1b5fdb743d79c8acd4e1ecbcbd89b3"
   integrity sha512-pPobydIHK884YBtkS/tWSZXpSAEpcMbilyun3KL37ot935qL2HNKm/tI45i/Rd+MxdIWEhm7/LmUQzWZYK+Qhg==
@@ -1272,18 +1272,18 @@ vite-plugin-import-build@^0.1.2:
   resolved "https://registry.yarnpkg.com/vite-plugin-import-build/-/vite-plugin-import-build-0.1.2.tgz#86a7be480cd84360d92f6bfa94a237646e9aa7fd"
   integrity sha512-Jh4wanyvJ5QLDrVtw6VsTqT+1yISp1Fa+5v7VSwf5xyRiYZ0VeffMrSQFrQlt50D7g3CpO/aX9/X/SVWCVCa0w==
 
-vite-plugin-ssr@^0.2.11:
-  version "0.2.11"
-  resolved "https://registry.yarnpkg.com/vite-plugin-ssr/-/vite-plugin-ssr-0.2.11.tgz#bd3b30862bd0c1d4e2d9574836929addd7ad10c3"
-  integrity sha512-tyjLDMwWh67UV3HXM60eXB8/jm+wZETiFzU4P0Pue5Ty/3CG6SsCVraKeXbOanYAcwqtJYViSFypUHrexJdOpg==
+vite-plugin-ssr@0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/vite-plugin-ssr/-/vite-plugin-ssr-0.3.3.tgz#772fabe8a770601a3e74d5803bba1aacd150dd53"
+  integrity sha512-LcBmfpdzGZfKwlb0nSGX+52mJJVpuRc5aFn6KO6W0Fe/6cSZ9PfNYLi1E3Z7cmUGm7QPZVyKhTEdfjrZq75CbA==
   dependencies:
     "@brillout/json-s" "^0.2.0"
     "@brillout/libassert" "^0.4.2"
     "@brillout/path-to-regexp" "^0.1.2"
     cac "^6.7.3"
     devalue "^2.0.1"
-    fast-glob "^3.2.5"
-    kolorist "^1.4.1"
+    fast-glob "^3.2.7"
+    kolorist "^1.5.0"
     p-limit "^3.1.0"
     vite-plugin-import-build "^0.1.2"
 
