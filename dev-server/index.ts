@@ -1,5 +1,5 @@
 import express from 'express'
-import { createPageRender } from 'vite-plugin-ssr'
+import { createPageRenderer } from 'vite-plugin-ssr'
 import fetch from 'node-fetch'
 
 // @ts-ignore
