@@ -19,7 +19,7 @@
     "vite": "^2.3.6",
     "vite-plugin-ssr": "^0.2.11",
     "vue": "^3.2.0",
-    "vue-query": "^1.10.0"
+    "vue-query": "^1.11.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.12",

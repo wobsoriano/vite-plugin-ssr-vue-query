@@ -1055,10 +1055,10 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-query@^3.19.6:
-  version "3.21.0"
-  resolved "https://registry.yarnpkg.com/react-query/-/react-query-3.21.0.tgz#2e099a7906c38eeeb750e8b9b12121a21fa8d9ef"
-  integrity sha512-5rY5J8OD9f4EdkytjSsdCO+pqbJWKwSIMETfh/UyxqyjLURHE0IhlB+IPNPrzzu/dzK0rRxi5p0IkcCdSfizDQ==
+react-query@^3.23.2:
+  version "3.25.1"
+  resolved "https://registry.yarnpkg.com/react-query/-/react-query-3.25.1.tgz#221ff17406518a7689378dcbbdc986b0ba2c3919"
+  integrity sha512-tGZkap921d9dJD2F8+NpEu3djLRP+tpZKHKhQvqUMYMfWT5R18iRtGAG5ZeUMlRKuhzNaZx3cHiYj3DsyZ1SWw==
   dependencies:
     "@babel/runtime" "^7.5.5"
     broadcast-channel "^3.4.1"
@@ -1304,13 +1304,13 @@ vue-demi@^0.10.1:
   resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.10.1.tgz#229b81395510f02f4ee255344557a12cc0120930"
   integrity sha512-L6Oi+BvmMv6YXvqv5rJNCFHEKSVu7llpWWJczqmAQYOdmPPw5PNYoz1KKS//Fxhi+4QP64dsPjtmvnYGo1jemA==
 
-vue-query@^1.10.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/vue-query/-/vue-query-1.10.0.tgz#c3aca93e40ec62b016c9814a40b992e144494cd3"
-  integrity sha512-95iXp6TqOOYKGKbRzdvBJ8rXdU1mMaRdPhFgWM8RSKjnWZWX4tWo3jgd5LlAddJD6Lp7bXa4uszR/RNYePvU3w==
+vue-query@^1.11.2:
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/vue-query/-/vue-query-1.11.2.tgz#53c9926116f13fa3933c3dc8e44fb41db5cf66c1"
+  integrity sha512-qz6dbkUA+zRyyS4gNGXcniH83GekfNnJWA7LD7sEKR/tuLkAYaWeON38xhM5A6q+pkbPNcEg0FjIYQeGoEgesQ==
   dependencies:
     match-sorter "^6.3.0"
-    react-query "^3.19.6"
+    react-query "^3.23.2"
     vue-demi "^0.10.1"
 
 vue@^3.2.0:
