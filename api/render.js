@@ -10,9 +10,13 @@ export default async (req, res) => {
   const pageContext = await renderPage(pageContextInit)
   const { httpResponse } = pageContext
   if (!httpResponse) {
-    res.status(200).send('')
+    res.statusCode = 200
+    res.end()
   } else {
-    const { body, statusCode } = httpResponse
-    res.status(statusCode).setHeader('content-type', 'text/html').send(body)
+    const { body, statusCode, contentType } = httpResponse
+
+    res.statusCode = statusCode
+    res.setHeader('content-type', contentType)
+    res.end(body)
   }
 }
