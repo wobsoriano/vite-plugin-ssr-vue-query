@@ -17,8 +17,10 @@ const { hydrationPromise } = useClientRouter({
       app.changePage(pageContext)
     }
   },
+  ensureHydration: true,
+  prefetchLinks: true,
   onTransitionStart,
-  onTransitionEnd
+  onTransitionEnd,
 })
 
 hydrationPromise.then(() => {
