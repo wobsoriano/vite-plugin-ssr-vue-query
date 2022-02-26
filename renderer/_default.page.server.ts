@@ -1,5 +1,5 @@
-import { renderToNodeStream } from '@vue/server-renderer'
-import { escapeInject } from 'vite-plugin-ssr'
+import { renderToString } from '@vue/server-renderer'
+import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
 import { VUE_QUERY_STATE } from '../pages/characters/characterData'
 import { createApp } from './app'
 import { PageContext } from './types'
@@ -7,24 +7,19 @@ import { PageContext } from './types'
 export { passToClient }
 export { render }
 
-const passToClient = [
-  'pageProps',
-  'documentProps',
-  'urlPathname',
-  'routeParams',
-]
+const passToClient = ['pageProps', 'documentProps', 'routeParams']
 
 async function render(pageContext: PageContext) {
   const app = createApp(pageContext)
   app.provide(VUE_QUERY_STATE, pageContext.pageProps?.vueQueryState)
-  const stream = renderToNodeStream(app)
+  const appHtml = await renderToString(app)
 
   return escapeInject`<!DOCTYPE html>
     <html>
       <head>
       </head>
       <body>
-        <div id="app">${stream}</div>
+        <div id="app">${dangerouslySkipEscape(appHtml)}</div>
       </body>
     </html>`
 }

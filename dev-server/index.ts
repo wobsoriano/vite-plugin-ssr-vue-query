@@ -31,11 +31,8 @@ async function startServer() {
     const { httpResponse } = pageContext
     if (!httpResponse) return next()
     // @ts-ignore
-    const stream = await httpResponse.getNodeStream()
-    // @ts-ignore
-    const { statusCode, contentType } = httpResponse
-    res.status(statusCode).type(contentType)
-    stream.pipe(res)
+    const { statusCode, body, contentType } = httpResponse
+    res.status(statusCode).type(contentType).send(body)
   })
 
   const port = process.env.PORT || 3000
