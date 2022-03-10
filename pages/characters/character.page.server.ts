@@ -1,22 +1,22 @@
-import { dehydrate, QueryClient } from "vue-query"
-import { PageContext } from "../../renderer/types"
-import { getCharacter } from "./characterData";
+import { QueryClient, dehydrate } from 'vue-query'
+import type { PageContext } from '../../renderer/types'
+import { getCharacter } from './characterData'
 
 export { onBeforeRender }
 
 async function onBeforeRender(pageContext: PageContext) {
-    const { characterId } = pageContext.routeParams
-    const queryClient = new QueryClient()
-    await queryClient.prefetchQuery(['characters', characterId], () => getCharacter(characterId));
+  const { characterId } = pageContext.routeParams
+  const queryClient = new QueryClient()
+  await queryClient.prefetchQuery(['characters', characterId], () => getCharacter(characterId))
 
-    const vueQueryState = dehydrate(queryClient)
+  const vueQueryState = dehydrate(queryClient)
 
-    return {
-        pageContext: {
-            pageProps: {
-                vueQueryState,
-                characterId
-            }
-        }
-    }
+  return {
+    pageContext: {
+      pageProps: {
+        vueQueryState,
+        characterId,
+      },
+    },
+  }
 }

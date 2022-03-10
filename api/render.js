@@ -4,7 +4,7 @@ import '../dist/server/importBuild.js'
 
 const renderPage = createPageRenderer({ isProduction: true })
 
-export default async (req, res) => {
+export default async(req, res) => {
   const { url } = req
   const pageContextInit = { url }
   const pageContext = await renderPage(pageContextInit)
@@ -12,7 +12,8 @@ export default async (req, res) => {
   if (!httpResponse) {
     res.statusCode = 200
     res.end()
-  } else {
+  }
+  else {
     const { body, statusCode, contentType } = httpResponse
 
     res.statusCode = statusCode

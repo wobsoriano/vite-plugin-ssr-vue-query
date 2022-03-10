@@ -1,8 +1,12 @@
 <template>
   <div>
     <h1>Rick and Morty Characters</h1>
-    <button @click="refetch()" :disabled="isFetching">{{ isFetching ? 'Refetching...' : 'Refetch' }}</button>
-    <div v-if="isLoading">loading...</div>
+    <button :disabled="isFetching" @click="refetch()">
+      {{ isFetching ? 'Refetching...' : 'Refetch' }}
+    </button>
+    <div v-if="isLoading">
+      loading...
+    </div>
     <div v-else>
       <ul>
         <li v-for="char in characters" :key="char.id">
@@ -10,7 +14,9 @@
         </li>
       </ul>
     </div>
-    <button v-show="hasNextPage" @click="fetchNextPage()">{{ isFetchingNextPage ? 'Fetching next page...' : 'Fetch next page' }}</button>
+    <button v-show="hasNextPage" @click="fetchNextPage()">
+      {{ isFetchingNextPage ? 'Fetching next page...' : 'Fetch next page' }}
+    </button>
   </div>
 </template>
 
@@ -18,7 +24,7 @@
 import { computed } from 'vue'
 import { useInfiniteQuery } from 'vue-query'
 import { getCharacters, initialPage } from './characterData'
-import { APIResponse, Character } from './types'
+import type { APIResponse, Character } from './types'
 
 // initialData prop comes from pageProps in index.page.server.ts
 const props = defineProps<{
@@ -32,11 +38,11 @@ const {
   isFetching,
   hasNextPage,
   fetchNextPage,
-  isFetchingNextPage
+  isFetchingNextPage,
 } = useInfiniteQuery(['characters'], ({ pageParam }) => getCharacters(pageParam), {
   initialData: {
     pages: [props.initialData], // set our initial data from pageProps
-    pageParams: [initialPage]
+    pageParams: [initialPage],
   },
   getNextPageParam: (lastPage) => {
     const nextUrl = lastPage.info.next
@@ -46,7 +52,7 @@ const {
     }
     // Return false means no next page
     return false
-  }
+  },
 })
 
 const characters = computed<Character[]>(() => {

@@ -1,5 +1,5 @@
 <template>
-    <slot />
+  <slot />
 </template>
 
 <script setup lang="ts">
@@ -9,7 +9,7 @@ import { VUE_QUERY_STATE } from '../pages/characters/characterData'
 
 const vueQueryState = inject(VUE_QUERY_STATE)
 if (vueQueryState) {
-    const queryClient = useQueryClient()
-    hydrate(queryClient, vueQueryState)
+  const queryClient = useQueryClient()
+  hydrate(queryClient, vueQueryState)
 }
 </script>

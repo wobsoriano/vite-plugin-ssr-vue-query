@@ -1,6 +1,7 @@
-import { App, createSSRApp, defineComponent, h, markRaw, reactive } from 'vue'
+import type { App } from 'vue'
+import { createSSRApp, defineComponent, h, markRaw, reactive } from 'vue'
 import PageLayout from './PageLayout.vue'
-import { Component, PageContext } from './types'
+import type { Component, PageContext } from './types'
 
 export { createApp }
 
@@ -11,7 +12,7 @@ function createApp(pageContext: PageContext) {
   const PageWithLayout = defineComponent({
     data: () => ({
       Page: markRaw(Page),
-      pageProps: markRaw(pageContext.pageProps || {})
+      pageProps: markRaw(pageContext.pageProps || {}),
     }),
     created() {
       rootComponent = this
@@ -23,10 +24,10 @@ function createApp(pageContext: PageContext) {
         {
           default: () => {
             return h(this.Page, this.pageProps)
-          }
-        }
+          },
+        },
       )
-    }
+    },
   })
 
   // We use `reactive` because we use Client-side Routing.
@@ -39,7 +40,7 @@ function createApp(pageContext: PageContext) {
   }
 
   const app: App<Element> & { changePage: typeof changePage } = Object.assign(createSSRApp(PageWithLayout), {
-    changePage
+    changePage,
   })
   app.config.globalProperties.$pageContext = pageContextReactive
 
