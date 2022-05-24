@@ -17,7 +17,7 @@ specifiers:
   vite: ^2.9.9
   vite-plugin-ssr: 0.3.59
   vue: ^3.2.36
-  vue-query: ^1.19.1
+  vue-query: 2.0.0-alpha.3
 
 dependencies:
   '@vitejs/plugin-vue': 2.3.3_vite@2.9.9+vue@3.2.36
@@ -32,7 +32,7 @@ dependencies:
   vite: 2.9.9
   vite-plugin-ssr: 0.3.59_vite@2.9.9
   vue: 3.2.36
-  vue-query: 1.19.1_vue@3.2.36
+  vue-query: 2.0.0-alpha.3_vue@3.2.36
 
 devDependencies:
   '@antfu/eslint-config': 0.18.3_zlvujy5mo3bfvwuw46uoxyougq
@@ -171,8 +171,8 @@ packages:
       '@babel/types': 7.18.0
     dev: false
 
-  /@babel/runtime/7.17.2:
-    resolution: {integrity: sha512-hzeyJyMA1YGdJTuWU0e/j4wKXrU4OMFvY2MSlaI9B7VQb0r5cxTE3EAIS2Q7Tn2RIcDkRvTA/v2JsAEhxe99uw==}
+  /@babel/runtime/7.18.0:
+    resolution: {integrity: sha512-YMQvx/6nKEaucl0MY56mwIG483xk8SDNdlUwb2Ts6FUpr7fm85DxEmsY18LXBNhcTz6tO6JwZV8w1W06v8UKeg==}
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.9
@@ -318,6 +318,10 @@ packages:
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: true
+
+  /@types/use-sync-external-store/0.0.3:
+    resolution: {integrity: sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==}
+    dev: false
 
   /@typescript-eslint/eslint-plugin/5.14.0_45h3sdbv7gkypcmriwyqpcvfwq:
     resolution: {integrity: sha512-ir0wYI4FfFUDfLcuwKzIH7sMVA+db7WYen47iRSaCGl+HMAZI9fpBwfDo45ZALD3A45ZGyHWDNLhbg8tZrMX4w==}
@@ -492,6 +496,10 @@ packages:
     dependencies:
       '@vue/compiler-dom': 3.2.36
       '@vue/shared': 3.2.36
+    dev: false
+
+  /@vue/devtools-api/6.1.4:
+    resolution: {integrity: sha512-IiA0SvDrJEgXvVxjNkHPFfDx6SXw0b/TUkqMcDZWNg9fnCAHbTpoo59YfJ9QLFkwa3raau5vSlRVzMSLDnfdtQ==}
     dev: false
 
   /@vue/reactivity-transform/3.2.36:
@@ -678,7 +686,7 @@ packages:
   /broadcast-channel/3.7.0:
     resolution: {integrity: sha512-cIAKJXAxGJceNZGTZSBzMxzyOn72cVgPnKx4dc6LRjQgbaJUQqhy5rzL3zbMxkMWsGKkv2hSFkPRMEXfoMZ2Mg==}
     dependencies:
-      '@babel/runtime': 7.17.2
+      '@babel/runtime': 7.18.0
       detect-node: 2.1.0
       js-sha3: 0.8.0
       microseconds: 0.2.0
@@ -2177,7 +2185,7 @@ packages:
   /match-sorter/6.3.1:
     resolution: {integrity: sha512-mxybbo3pPNuA+ZuCUhm5bwNkXrJTbsk5VWbR5wiwz/GC6LIiegBGn2w3O08UG/jdbYLinw51fSQ5xNU1U3MgBw==}
     dependencies:
-      '@babel/runtime': 7.17.2
+      '@babel/runtime': 7.18.0
       remove-accents: 0.4.2
     dev: false
 
@@ -2622,10 +2630,10 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
 
-  /react-query/3.34.16:
-    resolution: {integrity: sha512-7FvBvjgEM4YQ8nPfmAr+lJfbW95uyW/TVjFoi2GwCkF33/S8ajx45tuPHPFGWs4qYwPy1mzwxD4IQfpUDrefNQ==}
+  /react-query/4.0.0-beta.13:
+    resolution: {integrity: sha512-CnDuiD4IWGh2nesnAqMlUbXhcw7ZSZZ5JwfQyv3a8OIAs7NoHvtNWlIH88kcOWDZjC7eGALrjnwsWpCK45jjtw==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: '*'
       react-native: '*'
     peerDependenciesMeta:
@@ -2634,9 +2642,11 @@ packages:
       react-native:
         optional: true
     dependencies:
-      '@babel/runtime': 7.17.2
+      '@babel/runtime': 7.18.0
+      '@types/use-sync-external-store': 0.0.3
       broadcast-channel: 3.7.0
       match-sorter: 6.3.1
+      use-sync-external-store: 1.1.0
     dev: false
 
   /read-pkg-up/7.0.1:
@@ -3056,7 +3066,7 @@ packages:
   /unload/2.2.0:
     resolution: {integrity: sha512-B60uB5TNBLtN6/LsgAf3udH9saB5p7gqJwcFfbOEZ8BcBHnGwCf6G/TGiEqkRAxX7zAFIUtzdrXQSdL3Q/wqNA==}
     dependencies:
-      '@babel/runtime': 7.17.2
+      '@babel/runtime': 7.18.0
       detect-node: 2.1.0
     dev: false
 
@@ -3070,6 +3080,12 @@ packages:
     dependencies:
       punycode: 2.1.1
     dev: true
+
+  /use-sync-external-store/1.1.0:
+    resolution: {integrity: sha512-SEnieB2FPKEVne66NpXPd1Np4R1lTNKfjuy3XdIoPQKYBAFdzbzSZlSn1KJZUiihQLQC5Znot4SBz1EOTBwQAQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dev: false
 
   /utils-merge/1.0.1:
     resolution: {integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=}
@@ -3170,11 +3186,11 @@ packages:
       - supports-color
     dev: true
 
-  /vue-query/1.19.1_vue@3.2.36:
-    resolution: {integrity: sha512-ZXiL+Z8DGJzho7yfy1hYkSerBkJG0gKoinmIMI3PuoougdE6YhOFiRk2QQXEuIXRQu7WBdUVplz8DgQ+98RdEQ==}
+  /vue-query/2.0.0-alpha.3_vue@3.2.36:
+    resolution: {integrity: sha512-SohnTAay5HkdfQWN8SWvQXwfYFImUCXaaYhJA3+wQekJQkkFSN52+xymtNXyx1v2ukijCgDeCrAJc3WJ35Yzjg==}
     peerDependencies:
-      '@nuxtjs/composition-api': ^0.24.4
-      '@vue/composition-api': ^1.0.0
+      '@nuxtjs/composition-api': ^0.28.0
+      '@vue/composition-api': ^1.1.2
       vue: ^2.0.0 || >=3.0.0
     peerDependenciesMeta:
       '@nuxtjs/composition-api':
@@ -3182,8 +3198,9 @@ packages:
       '@vue/composition-api':
         optional: true
     dependencies:
+      '@vue/devtools-api': 6.1.4
       match-sorter: 6.3.1
-      react-query: 3.34.16
+      react-query: 4.0.0-beta.13
       vue: 3.2.36
       vue-demi: 0.10.1_vue@3.2.36
     transitivePeerDependencies:

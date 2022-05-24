@@ -1,5 +1,6 @@
 import type { App } from 'vue'
 import { createSSRApp, defineComponent, h, markRaw, reactive } from 'vue'
+import { VueQueryPlugin } from 'vue-query'
 import PageLayout from './PageLayout.vue'
 import type { Component, PageContext } from './types'
 
@@ -43,6 +44,7 @@ function createApp(pageContext: PageContext) {
     changePage,
   })
   app.config.globalProperties.$pageContext = pageContextReactive
+  app.use(VueQueryPlugin)
 
   return app
 }

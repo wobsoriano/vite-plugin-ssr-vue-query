@@ -1,7 +1,3 @@
-<template>
-  <slot />
-</template>
-
 <script setup lang="ts">
 import { inject } from 'vue'
 import { hydrate, useQueryClient } from 'vue-query'
@@ -13,3 +9,7 @@ if (vueQueryState) {
   hydrate(queryClient, vueQueryState)
 }
 </script>
+
+<template>
+  <slot />
+</template>

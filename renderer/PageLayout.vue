@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import Hydrate from './Hydrate.vue'
+</script>
+
 <template>
   <div class="layout">
     <div class="navigation">
@@ -14,13 +18,6 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { useQueryProvider } from 'vue-query'
-import Hydrate from './Hydrate.vue'
-
-useQueryProvider()
-</script>
 
 <style>
 body {

@@ -22,7 +22,7 @@
     "vite": "^2.9.9",
     "vite-plugin-ssr": "0.3.59",
     "vue": "^3.2.36",
-    "vue-query": "^1.19.1"
+    "vue-query": "2.0.0-alpha.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.18.3",
