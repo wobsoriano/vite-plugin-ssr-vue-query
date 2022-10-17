@@ -1,4 +1,4 @@
-Example of using `vite-plugin-ssr` with [vue-query](https://vue-query.vercel.app/).
+Example of using `vite-plugin-ssr` with [@tanstack/vue-query](https://tanstack.com/query/v4/docs/adapters/vue-query).
 
 Demo: https://vite-plugin-ssr-vue-query.vercel.app/
 
