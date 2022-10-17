@@ -1,4 +1,4 @@
-import { QueryClient, dehydrate } from 'vue-query'
+import { QueryClient, dehydrate } from '@tanstack/vue-query'
 import type { PageContext } from '../../renderer/types'
 import { getCharacter } from './characterData'
 

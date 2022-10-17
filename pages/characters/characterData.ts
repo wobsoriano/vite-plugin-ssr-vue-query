@@ -1,5 +1,5 @@
 import type { InjectionKey } from 'vue'
-import type { QueryClient } from 'vue-query'
+import type { QueryClient } from '@tanstack/vue-query'
 import { $fetch } from 'ohmyfetch'
 import type { APIResponse, Character } from './types'
 

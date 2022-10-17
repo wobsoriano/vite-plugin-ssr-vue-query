@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useInfiniteQuery } from 'vue-query'
+import { useInfiniteQuery } from '@tanstack/vue-query'
 import { getCharacters, initialPage } from './characterData'
 import type { APIResponse, Character } from './types'
 

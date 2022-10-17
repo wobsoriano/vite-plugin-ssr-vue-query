@@ -1,6 +1,6 @@
 import type { App } from 'vue'
 import { createSSRApp, defineComponent, h, markRaw, reactive } from 'vue'
-import { VueQueryPlugin } from 'vue-query'
+import { VueQueryPlugin } from '@tanstack/vue-query'
 import PageLayout from './PageLayout.vue'
 import type { Component, PageContext } from './types'
 

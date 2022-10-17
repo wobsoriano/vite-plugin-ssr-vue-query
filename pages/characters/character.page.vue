@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import { useQuery } from 'vue-query'
+import { useQuery } from '@tanstack/vue-query'
 import { getCharacter } from './characterData'
 
 const props = defineProps(['characterId'])

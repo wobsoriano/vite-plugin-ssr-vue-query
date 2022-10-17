@@ -1,5 +1,5 @@
 import type { PageContextBuiltIn } from 'vite-plugin-ssr/types'
-import type { QueryClient } from 'vue-query'
+import type { QueryClient } from '@tanstack/vue-query'
 export interface PageProps {
   vueQueryState: QueryClient | undefined
 }
